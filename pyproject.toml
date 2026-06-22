@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rmq-localvol"
+version = "0.1.0"
+description = "Recursive marginal quantization for derivatives pricing, extended to numerically-calibrated local volatility surfaces"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Damiru Ranasinghe" }
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rmq"]
+
+[tool.ruff]
+line-length = 100
